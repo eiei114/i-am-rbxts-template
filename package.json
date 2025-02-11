@@ -1,0 +1,99 @@
+{
+	"name": "rbxts-template",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"author": "",
+	"main": "index.js",
+	"scripts": {
+		"assets:upload": "asphalt sync",
+		"clean": "npx rimraf out/ && npx rimraf dist",
+		"commit": "commit",
+		"darklua": "darklua process out dist --verbose",
+		"dev:build": "rbxts-build build",
+		"dev:compile": "rbxts-build compile",
+		"dev:open": "rbxts-build open",
+		"dev:start": "rbxts-build start",
+		"dev:stop": "rbxts-build stop",
+		"dev:sync": "rbxts-build sync",
+		"dev:watch": "rbxts-build watch",
+		"license": "npx license-checker --production --summary",
+		"linkcheck": "npx markdown-link-check README.md",
+		"lint": "eslint --max-warnings 50 --flag unstable_ts_config .",
+		"lint:fix": "eslint --fix --max-warnings 0 --flag unstable_ts_config .",
+		"mantle:deploy:dev": "mantle deploy --environment dev",
+		"mantle:deploy:prod": "mantle deploy --environment prod",
+		"prepare": "husky",
+		"prod:build": "npm run clean && NODE_ENV=production && npx rbxtsc --verbose && npm run darklua",
+		"prod:sync": "rojo serve ./build.project.json",
+		"rojo:build": "rojo build ./build.project.json --output production.rbxl",
+		"textlint": "npx textlint README.md",
+		"textlint:fix": "npx textlint --fix README.md"
+	},
+	"lint-staged": {
+		"*.{ts,tsx}": "prettier --write"
+	},
+	"dependencies": {
+		"@rbxts/cmdr": "1.12.1",
+		"@rbxts/remo": "1.5.1",
+		"@rbxts/services": "1.5.5",
+		"@rbxts/set-timeout": "1.1.2",
+		"@rbxts/t": "3.1.1",
+		"@rbxts/timer": "0.0.9",
+		"@rbxts/zone-plus": "3.2.0",
+		"eslint-plugin-html": "8.1.2"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "19.7.1",
+		"@commitlint/config-conventional": "19.7.1",
+		"@commitlint/prompt-cli": "19.7.1",
+		"@commitlint/types": "19.5.0",
+		"@eslint-react/eslint-plugin": "1.26.2",
+		"@eslint/config-inspector": "0.7.1",
+		"@eslint/eslintrc": "3.2.0",
+		"@eslint/js": "9.20.0",
+		"@isentinel/eslint-config": "0.9.0",
+		"@rbxts/compiler-types": "3.0.0-types.0",
+		"@rbxts/types": "1.0.813",
+		"@typescript-eslint/eslint-plugin": "8.18.1",
+		"@typescript-eslint/parser": "8.18.1",
+		"eslint": "9.20.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-markdown": "5.1.0",
+		"eslint-plugin-prettier": "5.2.3",
+		"eslint-plugin-react-roblox-hooks": "5.1.0-rbx.1",
+		"eslint-plugin-roblox-ts": "0.0.36",
+		"husky": "9.1.7",
+		"jiti": "2.4.2",
+		"license-checker": "25.0.1",
+		"lint-staged": "15.4.3",
+		"markdown-link-check": "3.13.6",
+		"prettier": "3.4.2",
+		"rbxts-build": "2.4.0",
+		"roblox-ts": "3.0.0",
+		"textlint": "14.4.2",
+		"textlint-rule-ja-unnatural-alphabet": "2.0.1",
+		"textlint-rule-no-doubled-joshi": "5.1.0",
+		"textlint-rule-no-todo": "2.0.1",
+		"ts-node": "10.9.2",
+		"typescript": "5.7.3"
+	},
+	"packageManager": "pnpm@9.15.5",
+	"rbxts-build": {
+		"rbxtscArgs": [
+			"--verbose"
+		],
+		"rojoBuildArgs": [
+			"--output",
+			"development.rbxl"
+		],
+		"syncLocation": "src/types/services.d.ts",
+		"names": {
+			"build": "dev:build",
+			"compile": "dev:compile",
+			"open": "dev:open",
+			"watch": "dev:watch"
+		}
+	}
+}
