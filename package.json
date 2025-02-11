@@ -53,6 +53,9 @@
 		"@eslint/config-inspector": "0.7.1",
 		"@eslint/eslintrc": "3.2.0",
 		"@eslint/js": "9.20.0",
+		"@flamework/components": "1.2.3",
+		"@flamework/core": "1.2.3",
+		"@flamework/networking": "1.2.3",
 		"@isentinel/eslint-config": "0.9.0",
 		"@rbxts/compiler-types": "3.0.0-types.0",
 		"@rbxts/types": "1.0.813",
@@ -71,6 +74,7 @@
 		"markdown-link-check": "3.13.6",
 		"prettier": "3.4.2",
 		"rbxts-build": "2.4.0",
+		"rbxts-transformer-flamework": "1.2.3",
 		"roblox-ts": "3.0.0",
 		"textlint": "14.4.2",
 		"textlint-rule-ja-unnatural-alphabet": "2.0.1",
@@ -86,7 +90,7 @@
 		],
 		"rojoBuildArgs": [
 			"--output",
-			"development.rbxl"
+			"game.rbxl"
 		],
 		"syncLocation": "src/types/services.d.ts",
 		"names": {

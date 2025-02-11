@@ -22,7 +22,10 @@
 		"downlevelIteration": true,
 		"outDir": "out/",
 		"allowSyntheticDefaultImports": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"plugins": [
+			{ "transform": "rbxts-transformer-flamework" }
+		]
 	},
 	"exclude": ["./eslint.config.ts", "./commitlint.config.ts"]
 }

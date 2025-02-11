@@ -1,5 +1,5 @@
 {
-	"name": "rbxts-template-build",
+	"name": "i-am-rbxts-template-build",
 	"globIgnorePaths": [
 		"**/package.json",
 		"**/tsconfig.json"
@@ -19,7 +19,10 @@
 				"node_modules": {
 					"$className": "Folder",
 					"@rbxts": {
-						"$path": "node_modules/@rbxts"
+							"$path": "node_modules/@rbxts"
+					},
+					"@flamework": {
+							"$path": "node_modules/@flamework"
 					}
 				}
 			},
